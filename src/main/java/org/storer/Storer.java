@@ -22,7 +22,7 @@ public class Storer {
     protected void storeClues(List<Clue> clues) {
         String insertQuery =
             "INSERT INTO clues_java " +
-            "(id, category, round, category_number, value, question, answer, is_daily_double, " +
+            "(id, category, round, category_number, clue_value, question, answer, is_daily_double, " +
             "game_id, game_date, date_added) " +
             "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
