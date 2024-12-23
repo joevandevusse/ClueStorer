@@ -8,10 +8,19 @@ public class Clue {
     private final String question;
     private final String answer;
     private final boolean isDailyDouble;
+    private final int gameId;
+    private final String gameDate;
 
     public Clue(
-            String category, String round, int categoryNumber,
-            String value, String question, String answer, boolean isDailyDouble) {
+            String category,
+            String round,
+            int categoryNumber,
+            String value,
+            String question,
+            String answer,
+            boolean isDailyDouble,
+            int gameId,
+            String gameDate) {
         this.category = category;
         this.round = round;
         this.categoryNumber = categoryNumber;
@@ -19,6 +28,8 @@ public class Clue {
         this.question = question;
         this.answer = answer;
         this.isDailyDouble = isDailyDouble;
+        this.gameId = gameId;
+        this.gameDate = gameDate;
     }
 
     public String getCategory() {
@@ -49,6 +60,14 @@ public class Clue {
         return isDailyDouble;
     }
 
+    public int getGameId() {
+        return gameId;
+    }
+
+    public String getGameDate() {
+        return gameDate;
+    }
+
     @Override
     public String toString() {
         return "Clue{" +
@@ -58,6 +77,8 @@ public class Clue {
                 ", categoryNumber='" + categoryNumber + '\'' +
                 ", answer='" + answer + '\'' +
                 ", isDailyDouble='" + isDailyDouble + '\'' +
+                ", gameId='" + gameId + '\'' +
+                ", gameDate='" + gameDate + '\'' +
                 '}';
     }
 }

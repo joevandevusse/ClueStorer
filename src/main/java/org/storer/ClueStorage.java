@@ -27,7 +27,7 @@ public class ClueStorage {
     private static void getGame(int gameNumber) {
         // Use BeautifulSoup type API to get game
         String url = "http://j-archive.com/showgame.php?game_id=" + gameNumber;
-        scraper.scrapeGame(url);
+        scraper.scrapeGame(url, gameNumber);
     }
 
     public static void main(String[] args) {

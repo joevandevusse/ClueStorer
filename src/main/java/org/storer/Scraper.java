@@ -11,7 +11,12 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Scraper {
-    protected void scrapeGame(String url) {
+
+    private int gameId = 0;
+    private String gameDate = "1970-0-0";
+
+    protected void scrapeGame(String url, int gameNumber) {
+        gameId = gameNumber;
         try {
             // Connect to the website and get the HTML document
             Document doc = Jsoup.connect(url).get();
@@ -20,6 +25,9 @@ public class Scraper {
             // TODO: Use this to get the date
             String title = doc.title();
             System.out.println("Title: " + title);
+
+            // Get game date
+            gameDate = title.split("aired")[1].trim();
 
             // Get categories
             List<String> categories = getCategories(doc);
@@ -107,7 +115,7 @@ public class Scraper {
         }
         String category = categories.get(categoryNumber);
         return new Clue(category, round, categoryNumber, clueValue, clueText,
-                correctResponse, isDailyDouble);
+                correctResponse, isDailyDouble, gameId, gameDate);
     }
 
     private Clue constructFjClue(List<String> categories, String clueText,
@@ -118,7 +126,9 @@ public class Scraper {
                 "$0",
                 clueText,
                 correctResponse,
-                false);
+                false,
+                gameId,
+                gameDate);
     }
 
     protected List<String> scrapeSeason(String url) {
@@ -154,6 +164,8 @@ public class Scraper {
         System.out.println("Clue Text: " + clue.getQuestion());
         System.out.println("Correct Response: " + clue.getAnswer());
         System.out.println("Is Daily Double: " + clue.getIsDailyDouble());
+        System.out.println("Game ID: " + clue.getGameId());
+        System.out.println("Game Date: " + clue.getGameDate());
         System.out.println("----------------------------------------");
     }
 }
