@@ -1,22 +1,19 @@
 package org.storer;
 
-//import com.google.inject.Guice;
-//import com.google.inject.Injector;
-//import jakarta.inject.Inject;
+import org.storer.meta.Clue;
 
 import java.util.List;
 
 public class ClueStorage {
-    // Need to find an equivalent BeautifulSoup package for Java
-
-    //@Inject
     private static final Scraper scraper = new Scraper();
+    private static final Storer storer = new Storer();
 
     private static void storeClues(int season) {
         List<String> gameIds = getSeasonGames(season);
         System.out.println(gameIds);
         //gameIds.forEach(gameId -> getGame(Integer.parseInt(gameId)));
-        getGame(9036);
+        List<Clue> clues = getGameClues(9036);
+        persistClues(clues);
     }
 
     private static List<String> getSeasonGames(int season) {
@@ -24,10 +21,14 @@ public class ClueStorage {
         return scraper.scrapeSeason(url);
     }
 
-    private static void getGame(int gameNumber) {
+    private static List<Clue> getGameClues(int gameNumber) {
         // Use BeautifulSoup type API to get game
         String url = "http://j-archive.com/showgame.php?game_id=" + gameNumber;
-        scraper.scrapeGame(url, gameNumber);
+        return scraper.scrapeGame(url, gameNumber);
+    }
+
+    private static void persistClues(List<Clue> clues) {
+        storer.storeClues(clues);
     }
 
     public static void main(String[] args) {

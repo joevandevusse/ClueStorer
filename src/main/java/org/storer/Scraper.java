@@ -15,14 +15,14 @@ public class Scraper {
     private int gameId = 0;
     private String gameDate = "1970-0-0";
 
-    protected void scrapeGame(String url, int gameNumber) {
+    protected List<Clue> scrapeGame(String url, int gameNumber) {
         gameId = gameNumber;
+        List<Clue> clues = new ArrayList<>();
         try {
             // Connect to the website and get the HTML document
             Document doc = Jsoup.connect(url).get();
 
             // Extract the title of the page
-            // TODO: Use this to get the date
             String title = doc.title();
             System.out.println("Title: " + title);
 
@@ -34,12 +34,13 @@ public class Scraper {
             System.out.println("Categories: " + categories);
 
             // Get clues
-            List<Clue> clues = getClues(doc, categories);
+            clues = getClues(doc, categories);
             System.out.println("Clue Count: " + clues.size());
             System.out.println("----------------------------------------");
         } catch (Exception e) {
             System.out.println(Arrays.toString(e.getStackTrace()));
         }
+        return clues;
     }
 
     private List<String> getCategories(Document doc) {
