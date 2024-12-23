@@ -15,7 +15,8 @@ public class ClueStorage {
     private static void storeClues(int season) {
         List<String> gameIds = getSeasonGames(season);
         System.out.println(gameIds);
-        gameIds.forEach(gameId -> getGame(Integer.parseInt(gameId)));
+        //gameIds.forEach(gameId -> getGame(Integer.parseInt(gameId)));
+        getGame(9036);
     }
 
     private static List<String> getSeasonGames(int season) {
@@ -23,16 +24,11 @@ public class ClueStorage {
         return scraper.scrapeSeason(url);
     }
 
-
-
     private static void getGame(int gameNumber) {
         // Use BeautifulSoup type API to get game
         String url = "http://j-archive.com/showgame.php?game_id=" + gameNumber;
         scraper.scrapeGame(url);
     }
-
-//    private List<Clue> getCluesFromGame(JsonNode game) {
-//    }
 
     public static void main(String[] args) {
         storeClues(Integer.parseInt(args[0]));
