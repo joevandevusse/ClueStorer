@@ -4,7 +4,7 @@ public class Clue {
     private final String category;
     private final String round;
     private final int categoryNumber;
-    private final String value;
+    private final String clueValue;
     private final String question;
     private final String answer;
     private final boolean isDailyDouble;
@@ -15,7 +15,7 @@ public class Clue {
             String category,
             String round,
             int categoryNumber,
-            String value,
+            String clueValue,
             String question,
             String answer,
             boolean isDailyDouble,
@@ -24,7 +24,7 @@ public class Clue {
         this.category = category;
         this.round = round;
         this.categoryNumber = categoryNumber;
-        this.value = value;
+        this.clueValue = clueValue;
         this.question = question;
         this.answer = answer;
         this.isDailyDouble = isDailyDouble;
@@ -44,8 +44,8 @@ public class Clue {
         return categoryNumber;
     }
 
-    public String getValue() {
-        return value;
+    public String getClueValue() {
+        return clueValue;
     }
 
     public String getQuestion() {

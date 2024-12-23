@@ -35,7 +35,7 @@ public class Storer {
                     preparedStatement.setString(2, clue.getCategory());
                     preparedStatement.setString(3, clue.getRound());
                     preparedStatement.setInt(4, clue.getCategoryNumber());
-                    preparedStatement.setString(5, clue.getValue());
+                    preparedStatement.setString(5, clue.getClueValue());
                     preparedStatement.setString(6, clue.getQuestion());
                     preparedStatement.setString(7, clue.getAnswer());
                     preparedStatement.setBoolean(8, clue.getIsDailyDouble());

@@ -14,6 +14,7 @@ public class Scraper {
 
     private int gameId = 0;
     private String gameDate = "1970-0-0";
+    //private boolean logging = false;
 
     protected List<Clue> scrapeGame(String url, int gameNumber) {
         gameId = gameNumber;
@@ -24,19 +25,21 @@ public class Scraper {
 
             // Extract the title of the page
             String title = doc.title();
-            System.out.println("Title: " + title);
+            //System.out.println("Title: " + title);
 
             // Get game date
             gameDate = title.split("aired")[1].trim();
 
+            System.out.println("Scraping Game: " + gameId + " for date: " + gameDate);
+
             // Get categories
             List<String> categories = getCategories(doc);
-            System.out.println("Categories: " + categories);
+            //System.out.println("Categories: " + categories);
 
             // Get clues
             clues = getClues(doc, categories);
-            System.out.println("Clue Count: " + clues.size());
-            System.out.println("----------------------------------------");
+            //System.out.println("Clue Count: " + clues.size());
+            //System.out.println("----------------------------------------");
         } catch (Exception e) {
             System.out.println(Arrays.toString(e.getStackTrace()));
         }
@@ -60,7 +63,7 @@ public class Scraper {
 
         // Select all td elements with class "clue"
         Elements clueElements = doc.select("td.clue");
-        System.out.println("Clue Element Count: " + clueElements.size());
+        //System.out.println("Clue Element Count: " + clueElements.size());
 
         // Iterate through each clue element
         for (Element clue : clueElements) {
@@ -98,7 +101,7 @@ public class Scraper {
                         clueId, correctResponse, isDailyDouble);
             }
             clues.add(clueObj);
-            printClues(clueObj, clueId);
+            //printClues(clueObj, clueId);
         }
         return clues;
     }
@@ -138,10 +141,6 @@ public class Scraper {
             // Connect to the website and get the HTML document
             Document doc = Jsoup.connect(url).get();
 
-            // Extract the title of the page
-            String title = doc.title();
-            System.out.println("Title: " + title);
-
             // Select elements using CSS selectors
             Elements links = doc.select("a[href]");
             for (Element link : links) {
@@ -161,7 +160,7 @@ public class Scraper {
         System.out.println("Category: " + clue.getCategory());
         System.out.println("Round: " + clue.getRound());
         System.out.println("Category Number: " + clue.getCategoryNumber());
-        System.out.println("Clue Value: " + clue.getValue());
+        System.out.println("Clue Value: " + clue.getClueValue());
         System.out.println("Clue Text: " + clue.getQuestion());
         System.out.println("Correct Response: " + clue.getAnswer());
         System.out.println("Is Daily Double: " + clue.getIsDailyDouble());
