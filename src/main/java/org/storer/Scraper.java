@@ -27,7 +27,6 @@ public class Scraper {
 
             // Get clues
             List<Clue> clues = getClues(doc, categories);
-            //System.out.println("Clues: " + clues);
             System.out.println("Clue Count: " + clues.size());
             System.out.println("----------------------------------------");
         } catch (Exception e) {
@@ -43,8 +42,6 @@ public class Scraper {
         // Iterate and print each element's content
         for (Element element : categoryElements) {
             categories.add(element.text());
-            //System.out.println("Element Text: " + element.text());
-            //System.out.println("Element HTML: " + element.html());
         }
         return categories;
     }
@@ -84,8 +81,13 @@ public class Scraper {
             String correctResponse = responseElement != null ?
                     responseElement.text() : "Default Correct Response";
 
-            Clue clueObj = constructClue(categories, clueValue, clueText,
-                    clueId, correctResponse, isDailyDouble);
+            Clue clueObj;
+            if (clueId.contains("FJ")) {
+                clueObj = constructFjClue(categories, clueText, correctResponse);
+            } else {
+                clueObj = constructClue(categories, clueValue, clueText,
+                        clueId, correctResponse, isDailyDouble);
+            }
             clues.add(clueObj);
 
             System.out.println("Clue ID: " + clueId);
@@ -104,19 +106,22 @@ public class Scraper {
     private Clue constructClue(
             List<String> categories, String clueValue, String clueText,
             String clueId, String correctResponse, boolean isDailyDouble) {
-        System.out.println("Clue ID: " + clueId);
         String[] clueIdParts = clueId.split("_");
         String round = clueIdParts[1];
         int categoryNumber = -1;
         if (round.equals("J")) {
             categoryNumber = Integer.parseInt(clueIdParts[2]) - 1;
         } else if (round.equals("DJ")) {
-            // women 6, drama 7
             categoryNumber = Integer.parseInt(clueIdParts[2]) + 6 - 1;
         }
         String category = categories.get(categoryNumber);
         return new Clue(category, round, categoryNumber, clueValue, clueText,
                 correctResponse, isDailyDouble);
+    }
+
+    private Clue constructFjClue(List<String> categories, String clueText, String correctResponse) {
+        return new Clue(categories.get(categories.size() - 1), "FJ", -1,
+                "$0", clueText, correctResponse, false);
     }
 
     protected List<String> scrapeSeason(String url) {
