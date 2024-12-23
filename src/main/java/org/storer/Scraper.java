@@ -89,16 +89,7 @@ public class Scraper {
                         clueId, correctResponse, isDailyDouble);
             }
             clues.add(clueObj);
-
-            System.out.println("Clue ID: " + clueId);
-            System.out.println("Category: " + clueObj.getCategory());
-            System.out.println("Round: " + clueObj.getRound());
-            System.out.println("Category Number: " + clueObj.getCategoryNumber());
-            System.out.println("Clue Value: " + clueObj.getValue());
-            System.out.println("Clue Text: " + clueObj.getQuestion());
-            System.out.println("Correct Response: " + clueObj.getAnswer());
-            System.out.println("Is Daily Double: " + clueObj.getIsDailyDouble());
-            System.out.println("----------------------------------------");
+            printClues(clueObj, clueId);
         }
         return clues;
     }
@@ -119,9 +110,15 @@ public class Scraper {
                 correctResponse, isDailyDouble);
     }
 
-    private Clue constructFjClue(List<String> categories, String clueText, String correctResponse) {
-        return new Clue(categories.get(categories.size() - 1), "FJ", -1,
-                "$0", clueText, correctResponse, false);
+    private Clue constructFjClue(List<String> categories, String clueText,
+                                 String correctResponse) {
+        return new Clue(categories.get(categories.size() - 1),
+                "FJ",
+                categories.size() - 1,
+                "$0",
+                clueText,
+                correctResponse,
+                false);
     }
 
     protected List<String> scrapeSeason(String url) {
@@ -146,5 +143,17 @@ public class Scraper {
             System.out.println(Arrays.toString(e.getStackTrace()));
         }
         return gameIds;
+    }
+
+    private void printClues(Clue clue, String clueId) {
+        System.out.println("Clue ID: " + clueId);
+        System.out.println("Category: " + clue.getCategory());
+        System.out.println("Round: " + clue.getRound());
+        System.out.println("Category Number: " + clue.getCategoryNumber());
+        System.out.println("Clue Value: " + clue.getValue());
+        System.out.println("Clue Text: " + clue.getQuestion());
+        System.out.println("Correct Response: " + clue.getAnswer());
+        System.out.println("Is Daily Double: " + clue.getIsDailyDouble());
+        System.out.println("----------------------------------------");
     }
 }
