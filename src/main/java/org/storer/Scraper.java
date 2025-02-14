@@ -7,14 +7,15 @@ import org.jsoup.select.Elements;
 import org.storer.meta.Clue;
 
 import java.util.ArrayList;
-import java.util.Arrays;
+//import java.util.Arrays;
 import java.util.List;
 
 public class Scraper {
 
     private int gameId = 0;
     private String gameDate = "1970-0-0";
-    //private boolean logging = false;
+    private static final ScraperHelper scraperHelper = new ScraperHelper();
+    private boolean logging = false;
 
     protected List<Clue> scrapeGame(String url, int gameNumber) {
         gameId = gameNumber;
@@ -25,7 +26,7 @@ public class Scraper {
 
             // Extract the title of the page
             String title = doc.title();
-            //System.out.println("Title: " + title);
+            if (logging) System.out.println("Title: " + title);
 
             // Get game date
             gameDate = title.split("aired")[1].trim();
@@ -34,14 +35,14 @@ public class Scraper {
 
             // Get categories
             List<String> categories = getCategories(doc);
-            //System.out.println("Categories: " + categories);
+            if (logging) System.out.println("Categories: " + categories);
 
             // Get clues
             clues = getClues(doc, categories);
-            //System.out.println("Clue Count: " + clues.size());
-            //System.out.println("----------------------------------------");
+            if (logging) System.out.println("Clue Count: " + clues.size());
+            if (logging) System.out.println("----------------------------------------");
         } catch (Exception e) {
-            System.out.println(Arrays.toString(e.getStackTrace()));
+            e.printStackTrace();
         }
         return clues;
     }
@@ -63,17 +64,18 @@ public class Scraper {
 
         // Select all td elements with class "clue"
         Elements clueElements = doc.select("td.clue");
-        //System.out.println("Clue Element Count: " + clueElements.size());
+        if (logging) System.out.println("Clue Element Count: " + clueElements.size());
 
         // Iterate through each clue element
         for (Element clue : clueElements) {
             Element textElement = clue.selectFirst("td.clue_text");
             if (textElement == null) {
-                System.out.println("CLUE NOT READ");
+                if (logging) System.out.println("CLUE NOT READ");
                 continue;
             }
 
             String clueText = textElement.text();
+            String clueId = textElement.attr("id");
             boolean isDailyDouble = false;
             Element valueElement = clue.selectFirst("td.clue_value");
             String clueValue;
@@ -81,14 +83,14 @@ public class Scraper {
             // Check if the clue is a daily double
             if (valueElement == null) {
                 Element ddValueElement = clue.selectFirst("td.clue_value_daily_double");
-                clueValue = ddValueElement != null ?
-                        ddValueElement.text().split(":")[1].trim() : "$0";
+                clueValue = scraperHelper.getDailyDoubleValue(clueId, ddValueElement);
+                //clueValue = ddValueElement != null ?
+                        //ddValueElement.text().split(":")[1].trim() : "$0";
                 isDailyDouble = true;
             } else {
                 clueValue = valueElement.text();
             }
 
-            String clueId = textElement.attr("id");
             Element responseElement = clue.selectFirst("td em.correct_response");
             String correctResponse = responseElement != null ?
                     responseElement.text() : "Default Correct Response";
@@ -101,7 +103,7 @@ public class Scraper {
                         clueId, correctResponse, isDailyDouble);
             }
             clues.add(clueObj);
-            //printClues(clueObj, clueId);
+            if (logging) printClues(clueObj, clueId);
         }
         return clues;
     }
@@ -150,7 +152,7 @@ public class Scraper {
                 }
             }
         } catch (Exception e) {
-            System.out.println(Arrays.toString(e.getStackTrace()));
+            e.printStackTrace();
         }
         return gameIds;
     }
