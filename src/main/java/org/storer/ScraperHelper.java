@@ -23,7 +23,6 @@ public class ScraperHelper {
                 value = 1000;
                 break;
             default:
-                value = 0;
                 break;
         }
 

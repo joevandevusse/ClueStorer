@@ -1,5 +1,6 @@
 package org.storer;
 
+import com.google.inject.Inject;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -14,8 +15,14 @@ public class Scraper {
 
     private int gameId = 0;
     private String gameDate = "1970-0-0";
-    private static final ScraperHelper scraperHelper = new ScraperHelper();
+    //private static final ScraperHelper scraperHelper = new ScraperHelper();
+    private final ScraperHelper scraperHelper;
     private boolean logging = false;
+
+    @Inject
+    public Scraper(ScraperHelper scraperHelper) {
+        this.scraperHelper = scraperHelper;
+    }
 
     protected List<Clue> scrapeGame(String url, int gameNumber) {
         gameId = gameNumber;
