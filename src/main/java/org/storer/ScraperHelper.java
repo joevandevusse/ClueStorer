@@ -1,9 +1,7 @@
 package org.storer;
 
-import org.jsoup.nodes.Element;
-
 public class ScraperHelper {
-    protected String getDailyDoubleValue(String clueId, Element ddElement) {
+    protected String getDailyDoubleValue(String clueId) {
         int row = Integer.parseInt(clueId.split("_")[3]);
         int value = 0;
         switch (row) {

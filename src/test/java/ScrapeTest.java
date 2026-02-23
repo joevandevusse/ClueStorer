@@ -8,7 +8,6 @@ public class ScrapeTest {
     Document doc = Jsoup.connect(url).get();
 
     public void testGetCategories() {
-        Document doc = Jsoup.parse()
     }
 
 }

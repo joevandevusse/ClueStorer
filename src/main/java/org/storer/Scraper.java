@@ -90,7 +90,7 @@ public class Scraper {
             // Check if the clue is a daily double
             if (valueElement == null) {
                 Element ddValueElement = clue.selectFirst("td.clue_value_daily_double");
-                clueValue = scraperHelper.getDailyDoubleValue(clueId, ddValueElement);
+                clueValue = scraperHelper.getDailyDoubleValue(clueId);
                 //clueValue = ddValueElement != null ?
                         //ddValueElement.text().split(":")[1].trim() : "$0";
                 isDailyDouble = true;

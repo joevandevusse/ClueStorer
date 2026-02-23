@@ -1,11 +1,10 @@
 package org.storer;
 
 import org.storer.meta.Clue;
-
 import java.util.List;
 
 public class ClueStorage {
-    private static final Scraper scraper = new Scraper();
+    private static final Scraper scraper = new Scraper(new ScraperHelper());
     private static final Storer storer = new Storer();
 
     private static void storeClues(int season) {

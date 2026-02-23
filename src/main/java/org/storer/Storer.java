@@ -14,9 +14,9 @@ import java.util.UUID;
 
 public class Storer {
 
-    private static final String URL = "jdbc:postgresql://localhost:5432/joevandevusse";
-    private static final String USER = "joevandevusse";
-    private static final String PASSWORD = "whombovb2508";
+    private static final String URL = System.getenv("DB_URL");
+    private static final String USER = System.getenv("DB_USER");
+    private static final String PASSWORD = System.getenv("DB_PASSWORD");
     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 
     protected void storeClues(List<Clue> clues) {
