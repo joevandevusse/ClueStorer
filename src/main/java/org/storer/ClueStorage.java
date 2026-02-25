@@ -25,7 +25,7 @@ public class ClueStorage {
 
     private static List<Clue> getGameClues(int gameNumber) {
         // Use BeautifulSoup type API to get game (Jsoup)
-        String url = "http://j-archive.com/showgame.php?game_id=" + gameNumber;
+        String url = "https://j-archive.com/showgame.php?game_id=" + gameNumber;
         return scraper.scrapeGame(url, gameNumber);
     }
 
@@ -34,6 +34,15 @@ public class ClueStorage {
     }
 
     public static void main(String[] args) {
-        storeClues(Integer.parseInt(args[0]));
+        if (args.length == 0) {
+            System.err.println("Usage: ClueStorage <season>");
+            System.exit(1);
+        }
+        try {
+            storeClues(Integer.parseInt(args[0]));
+        } catch (NumberFormatException e) {
+            System.err.println("Error: season must be a number, got: " + args[0]);
+            System.exit(1);
+        }
     }
 }

@@ -25,7 +25,7 @@ Items are grouped by file and ordered by priority within each group. Check them 
 - [x] **`Scraper.java` — Mutable `gameId` / `gameDate` instance state**
   These fields are set during `scrapeGame()`, making `Scraper` stateful and non-reentrant. Pass them as parameters or return a wrapper object alongside the clue list.
 
-- [ ] **`ScraperHelper.java` — Switch statement is just multiplication**
+- [x] **`ScraperHelper.java` — Switch statement is just multiplication**
   Rows 1–5 map to 200, 400, 600, 800, 1000. The entire switch can be replaced with `int value = row * 200;`.
 
 - [x] **`Storer.java` — Inconsistent and lossy error handling**
@@ -34,10 +34,10 @@ Items are grouped by file and ordered by priority within each group. Check them 
 - [x] **`Storer.java` — No validation of environment variables**
   If `DB_URL`, `DB_USER`, or `DB_PASSWORD` are unset, the app throws a cryptic NPE. Add an explicit startup check with a clear error message.
 
-- [ ] **`ClueStorage.java` — No input validation on CLI args**
+- [x] **`ClueStorage.java` — No input validation on CLI args**
   Missing or non-numeric `args[0]` throws an unhelpful `ArrayIndexOutOfBoundsException` or `NumberFormatException`. Add a guard with a usage message.
 
-- [ ] **`ClueStorage.java` — Inconsistent URL schemes**
+- [x] **`ClueStorage.java` — Inconsistent URL schemes**
   `getSeasonGames` uses `https://` but `getGameClues` uses `http://` (line 28). Standardize to `https://`.
 
 ---
