@@ -1,6 +1,5 @@
 package org.storer;
 
-import com.google.inject.Inject;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -19,7 +18,6 @@ public class Scraper {
     private final ScraperHelper scraperHelper;
     private boolean logging = false;
 
-    @Inject
     public Scraper(ScraperHelper scraperHelper) {
         this.scraperHelper = scraperHelper;
     }

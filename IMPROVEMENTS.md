@@ -19,7 +19,7 @@ Items are grouped by file and ordered by priority within each group. Check them 
 
 ## Medium Priority
 
-- [ ] **`ClueStorage.java` / `pom.xml` — Guice is wired but never used**
+- [x] **`ClueStorage.java` / `pom.xml` — Guice is wired but never used**
   `@Inject` is on `Scraper`'s constructor but objects are instantiated manually. Either wire up a real `Injector` (and un-comment `StorageModule`) or remove Guice entirely and simplify.
 
 - [ ] **`Scraper.java` — Mutable `gameId` / `gameDate` instance state**
@@ -77,7 +77,7 @@ Items are grouped by file and ordered by priority within each group. Check them 
 - [ ] **`ClueStorage.java` — Remove leftover debug comment**
   Lines 17–18 contain a commented-out single-game invocation left over from debugging.
 
-- [ ] **`StorageModule.java` — Remove or implement**
+- [x] **`StorageModule.java` — Remove or implement**
   The file is entirely commented out. Either implement it (if keeping Guice) or delete it.
 
 - [ ] **`pom.xml` — Fix placeholder `groupId`**
