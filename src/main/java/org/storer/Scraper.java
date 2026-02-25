@@ -24,34 +24,31 @@ public class Scraper {
         this.scraperHelper = scraperHelper;
     }
 
-    protected List<Clue> scrapeGame(String url, int gameNumber) {
+    List<Clue> scrapeGame(Document doc, int gameNumber) throws Exception {
         gameId = gameNumber;
-        List<Clue> clues = new ArrayList<>();
+        String title = doc.title();
+        if (logging) System.out.println("Title: " + title);
+
+        gameDate = title.split("aired")[1].trim();
+        System.out.println("Scraping Game: " + gameId + " for date: " + gameDate);
+
+        List<String> categories = getCategories(doc);
+        if (logging) System.out.println("Categories: " + categories);
+
+        List<Clue> clues = getClues(doc, categories);
+        if (logging) System.out.println("Clue Count: " + clues.size());
+        if (logging) System.out.println("----------------------------------------");
+        return clues;
+    }
+
+    protected List<Clue> scrapeGame(String url, int gameNumber) {
         try {
-            // Connect to the website and get the HTML document
             Document doc = Jsoup.connect(url).get();
-
-            // Extract the title of the page
-            String title = doc.title();
-            if (logging) System.out.println("Title: " + title);
-
-            // Get game date
-            gameDate = title.split("aired")[1].trim();
-
-            System.out.println("Scraping Game: " + gameId + " for date: " + gameDate);
-
-            // Get categories
-            List<String> categories = getCategories(doc);
-            if (logging) System.out.println("Categories: " + categories);
-
-            // Get clues
-            clues = getClues(doc, categories);
-            if (logging) System.out.println("Clue Count: " + clues.size());
-            if (logging) System.out.println("----------------------------------------");
+            return scrapeGame(doc, gameNumber);
         } catch (Exception e) {
             e.printStackTrace();
+            return new ArrayList<>();
         }
-        return clues;
     }
 
     private List<String> getCategories(Document doc) {
@@ -87,13 +84,14 @@ public class Scraper {
             Element valueElement = clue.selectFirst("td.clue_value");
             String clueValue;
 
-            // Check if the clue is a daily double
+            // Check if the clue is a daily double (FJ has no value element but is not a DD)
             if (valueElement == null) {
-                Element ddValueElement = clue.selectFirst("td.clue_value_daily_double");
-                clueValue = scraperHelper.getDailyDoubleValue(clueId);
-                //clueValue = ddValueElement != null ?
-                        //ddValueElement.text().split(":")[1].trim() : "$0";
-                isDailyDouble = true;
+                if (clueId.contains("FJ")) {
+                    clueValue = "$0";
+                } else {
+                    clueValue = scraperHelper.getDailyDoubleValue(clueId);
+                    isDailyDouble = true;
+                }
             } else {
                 clueValue = valueElement.text();
             }
