@@ -44,13 +44,13 @@ Items are grouped by file and ordered by priority within each group. Check them 
 
 ## Low Priority
 
-- [ ] **`Clue.java` — Boolean getter naming**
+- [x] **`Clue.java` — Boolean getter naming**
   `getIsDailyDouble()` violates Java conventions. Rename to `isDailyDouble()`.
 
 - [x] **`pom.xml` — Upgrade Java target from 8 to 21**
   Java 8 is 12 years old. Upgrading to Java 21 (current LTS) unlocks records, text blocks, pattern matching, and more.
 
-- [ ] **`Clue.java` — Convert to a `record` (after Java upgrade)**
+- [x] **`Clue.java` — Convert to a `record` (after Java upgrade)**
   `Clue` is purely immutable data. A `record` eliminates the constructor, all getters, and `toString` boilerplate.
 
 - [x] **`Storer.java` — `DateTimeFormatter` should be `static final`**
@@ -59,29 +59,29 @@ Items are grouped by file and ordered by priority within each group. Check them 
 - [x] **`Storer.java` — Magic string table name**
   `"clues_java"` should be a `private static final String` constant.
 
-- [ ] **`Scraper.java` — `logging` flag**
+- [x] **`Scraper.java` — `logging` flag**
   The hardcoded `private boolean logging = false` field should be replaced with a proper logging framework (SLF4J + Logback).
 
-- [ ] **`Scraper.java` — Wasted initial list assignment**
+- [x] **`Scraper.java` — Wasted initial list assignment**
   `List<Clue> clues = new ArrayList<>()` on line 29 is immediately overwritten by `clues = getClues(...)`. Remove the first assignment.
 
-- [ ] **`Scraper.java` — Unused `ddValueElement` variable**
+- [x] **`Scraper.java` — Unused `ddValueElement` variable**
   Declared in the daily double branch but the line that uses it is commented out. Remove it.
 
-- [ ] **`Scraper.java` — Fragile title date parsing**
+- [x] **`Scraper.java` — Fragile title date parsing**
   `title.split("aired")[1]` throws `ArrayIndexOutOfBoundsException` if the title doesn't contain "aired". Add a defensive check.
 
-- [ ] **`ClueStorage.java` — Remove thin wrapper methods**
+- [x] **`ClueStorage.java` — Remove thin wrapper methods**
   `getSeasonGames`, `getGameClues`, and `persistClues` just delegate with identical arguments and add no value. Call scraper/storer methods directly.
 
-- [ ] **`ClueStorage.java` — Remove leftover debug comment**
+- [x] **`ClueStorage.java` — Remove leftover debug comment**
   Lines 17–18 contain a commented-out single-game invocation left over from debugging.
 
 - [x] **`StorageModule.java` — Remove or implement**
   The file is entirely commented out. Either implement it (if keeping Guice) or delete it.
 
-- [ ] **`pom.xml` — Fix placeholder `groupId`**
+- [x] **`pom.xml` — Fix placeholder `groupId`**
   `org.example` is the Maven default. Update to match the actual package (`org.storer`).
 
-- [ ] **`pom.xml` — Add executable JAR configuration**
+- [x] **`pom.xml` — Add executable JAR configuration**
   Add a `maven-jar-plugin` entry with a `mainClass` manifest so the jar is directly runnable.

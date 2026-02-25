@@ -36,55 +36,55 @@ class ScraperTest {
 
     @Test
     void testGameDateParsedFromTitle() {
-        assertEquals("2024-10-29", clues.get(0).getGameDate());
+        assertEquals("2024-10-29", clues.get(0).gameDate());
     }
 
     @Test
     void testGameIdStoredOnClues() {
-        assertEquals(9036, clues.get(0).getGameId());
+        assertEquals(9036, clues.get(0).gameId());
     }
 
     @Test
     void testAllRoundsPresent() {
-        assertTrue(clues.stream().anyMatch(c -> c.getRound().equals("J")));
-        assertTrue(clues.stream().anyMatch(c -> c.getRound().equals("DJ")));
-        assertTrue(clues.stream().anyMatch(c -> c.getRound().equals("FJ")));
+        assertTrue(clues.stream().anyMatch(c -> c.round().equals("J")));
+        assertTrue(clues.stream().anyMatch(c -> c.round().equals("DJ")));
+        assertTrue(clues.stream().anyMatch(c -> c.round().equals("FJ")));
     }
 
     @Test
     void testJeopardyClue() {
         // clue_J_1_1: ALASKAN CITIES $200
         Clue clue = clues.stream()
-                .filter(c -> c.getRound().equals("J")
-                        && c.getCategory().equals("ALASKAN CITIES")
-                        && c.getClueValue().equals("$200"))
+                .filter(c -> c.round().equals("J")
+                        && c.category().equals("ALASKAN CITIES")
+                        && c.clueValue().equals("$200"))
                 .findFirst()
                 .orElseThrow(() -> new AssertionError("Expected J clue not found"));
 
         assertEquals("Nome in the west of the state is the main city on Norton Sound, an arm of this sea",
-                clue.getQuestion());
-        assertEquals("the Bering Sea", clue.getAnswer());
-        assertFalse(clue.getIsDailyDouble());
+                clue.question());
+        assertEquals("the Bering Sea", clue.answer());
+        assertFalse(clue.isDailyDouble());
     }
 
     @Test
     void testDoubleJeopardyClue() {
         // clue_DJ_1_1: HISTORIC WOMEN $400
         Clue clue = clues.stream()
-                .filter(c -> c.getRound().equals("DJ")
-                        && c.getCategory().equals("HISTORIC WOMEN")
-                        && c.getClueValue().equals("$400"))
+                .filter(c -> c.round().equals("DJ")
+                        && c.category().equals("HISTORIC WOMEN")
+                        && c.clueValue().equals("$400"))
                 .findFirst()
                 .orElseThrow(() -> new AssertionError("Expected DJ clue not found"));
 
-        assertEquals("fission", clue.getAnswer());
-        assertFalse(clue.getIsDailyDouble());
+        assertEquals("fission", clue.answer());
+        assertFalse(clue.isDailyDouble());
     }
 
     @Test
     void testDailyDoubleCount() {
         // Standard game has exactly 3 Daily Doubles (1 in J!, 2 in DJ!)
-        long ddCount = clues.stream().filter(Clue::getIsDailyDouble).count();
+        long ddCount = clues.stream().filter(Clue::isDailyDouble).count();
         assertEquals(3, ddCount);
     }
 
@@ -92,22 +92,22 @@ class ScraperTest {
     void testDailyDoubleNominalValue() {
         // clue_J_2_4: row 4 in J! round -> nominal value $800
         Clue dd = clues.stream()
-                .filter(c -> c.getIsDailyDouble() && c.getRound().equals("J"))
+                .filter(c -> c.isDailyDouble() && c.round().equals("J"))
                 .findFirst()
                 .orElseThrow(() -> new AssertionError("Expected J! Daily Double not found"));
 
-        assertEquals("$800", dd.getClueValue());
+        assertEquals("$800", dd.clueValue());
     }
 
     @Test
     void testFinalJeopardyClue() {
         Clue fj = clues.stream()
-                .filter(c -> c.getRound().equals("FJ"))
+                .filter(c -> c.round().equals("FJ"))
                 .findFirst()
                 .orElseThrow(() -> new AssertionError("Expected FJ clue not found"));
 
-        assertEquals("NEWS FROM THE STORK", fj.getCategory());
-        assertEquals("Antarctica", fj.getAnswer());
-        assertFalse(fj.getIsDailyDouble());
+        assertEquals("NEWS FROM THE STORK", fj.category());
+        assertEquals("Antarctica", fj.answer());
+        assertFalse(fj.isDailyDouble());
     }
 }

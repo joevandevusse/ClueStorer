@@ -4,6 +4,8 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.storer.meta.Clue;
 
 import java.net.URI;
@@ -12,8 +14,8 @@ import java.util.List;
 
 public class Scraper {
 
+    private static final Logger log = LoggerFactory.getLogger(Scraper.class);
     private final ScraperHelper scraperHelper;
-    private boolean logging = false;
 
     public Scraper(ScraperHelper scraperHelper) {
         this.scraperHelper = scraperHelper;
@@ -21,17 +23,20 @@ public class Scraper {
 
     List<Clue> scrapeGame(Document doc, int gameNumber) throws Exception {
         String title = doc.title();
-        if (logging) System.out.println("Title: " + title);
+        log.debug("Title: {}", title);
 
-        String gameDate = title.split("aired")[1].trim();
-        System.out.println("Scraping Game: " + gameNumber + " for date: " + gameDate);
+        String[] titleParts = title.split("aired");
+        if (titleParts.length < 2) {
+            throw new IllegalArgumentException("Unexpected page title format: " + title);
+        }
+        String gameDate = titleParts[1].trim();
+        log.info("Scraping Game: {} for date: {}", gameNumber, gameDate);
 
         List<String> categories = getCategories(doc);
-        if (logging) System.out.println("Categories: " + categories);
+        log.debug("Categories: {}", categories);
 
         List<Clue> clues = getClues(doc, categories, gameNumber, gameDate);
-        if (logging) System.out.println("Clue Count: " + clues.size());
-        if (logging) System.out.println("----------------------------------------");
+        log.debug("Clue Count: {}", clues.size());
         return clues;
     }
 
@@ -40,7 +45,7 @@ public class Scraper {
             Document doc = Jsoup.connect(url).get();
             return scrapeGame(doc, gameNumber);
         } catch (Exception e) {
-            e.printStackTrace();
+            log.error("Failed to scrape game {}", gameNumber, e);
             return new ArrayList<>();
         }
     }
@@ -59,12 +64,12 @@ public class Scraper {
         List<Clue> clues = new ArrayList<>();
 
         Elements clueElements = doc.select("td.clue");
-        if (logging) System.out.println("Clue Element Count: " + clueElements.size());
+        log.debug("Clue Element Count: {}", clueElements.size());
 
         for (Element clue : clueElements) {
             Element textElement = clue.selectFirst("td.clue_text");
             if (textElement == null) {
-                if (logging) System.out.println("CLUE NOT READ");
+                log.debug("Skipping unrevealed clue");
                 continue;
             }
 
@@ -98,7 +103,7 @@ public class Scraper {
                         clueId, correctResponse, isDailyDouble, gameId, gameDate);
             }
             clues.add(clueObj);
-            if (logging) printClues(clueObj, clueId);
+            log.debug("Parsed clue {} | {} | {}", clueId, clueObj.category(), clueObj.clueValue());
         }
         return clues;
     }
@@ -150,22 +155,8 @@ public class Scraper {
                 }
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            log.error("Failed to scrape season at {}", url, e);
         }
         return gameIds;
-    }
-
-    private void printClues(Clue clue, String clueId) {
-        System.out.println("Clue ID: " + clueId);
-        System.out.println("Category: " + clue.getCategory());
-        System.out.println("Round: " + clue.getRound());
-        System.out.println("Category Number: " + clue.getCategoryNumber());
-        System.out.println("Clue Value: " + clue.getClueValue());
-        System.out.println("Clue Text: " + clue.getQuestion());
-        System.out.println("Correct Response: " + clue.getAnswer());
-        System.out.println("Is Daily Double: " + clue.getIsDailyDouble());
-        System.out.println("Game ID: " + clue.getGameId());
-        System.out.println("Game Date: " + clue.getGameDate());
-        System.out.println("----------------------------------------");
     }
 }

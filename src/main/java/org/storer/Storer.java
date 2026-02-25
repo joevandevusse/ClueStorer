@@ -48,15 +48,15 @@ public class Storer {
 
             for (Clue clue : clues) {
                 ps.setString(1, UUID.randomUUID().toString());
-                ps.setString(2, clue.getCategory());
-                ps.setString(3, clue.getRound());
-                ps.setInt(4, clue.getCategoryNumber());
-                ps.setString(5, clue.getClueValue());
-                ps.setString(6, clue.getQuestion());
-                ps.setString(7, clue.getAnswer());
-                ps.setBoolean(8, clue.getIsDailyDouble());
-                ps.setInt(9, clue.getGameId());
-                ps.setString(10, clue.getGameDate());
+                ps.setString(2, clue.category());
+                ps.setString(3, clue.round());
+                ps.setInt(4, clue.categoryNumber());
+                ps.setString(5, clue.clueValue());
+                ps.setString(6, clue.question());
+                ps.setString(7, clue.answer());
+                ps.setBoolean(8, clue.isDailyDouble());
+                ps.setInt(9, clue.gameId());
+                ps.setString(10, clue.gameDate());
                 ps.setString(11, LocalDate.now().format(FORMATTER));
                 ps.addBatch();
             }

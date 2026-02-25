@@ -21,23 +21,23 @@ class ClueTest {
     }
 
     @Test
-    void testGetters() {
+    void testAccessors() {
         Clue clue = buildClue(false);
-        assertEquals("SCIENCE", clue.getCategory());
-        assertEquals("J", clue.getRound());
-        assertEquals(0, clue.getCategoryNumber());
-        assertEquals("$200", clue.getClueValue());
-        assertEquals("This is the clue text", clue.getQuestion());
-        assertEquals("What is the answer", clue.getAnswer());
-        assertFalse(clue.getIsDailyDouble());
-        assertEquals(1234, clue.getGameId());
-        assertEquals("2024-10-29", clue.getGameDate());
+        assertEquals("SCIENCE", clue.category());
+        assertEquals("J", clue.round());
+        assertEquals(0, clue.categoryNumber());
+        assertEquals("$200", clue.clueValue());
+        assertEquals("This is the clue text", clue.question());
+        assertEquals("What is the answer", clue.answer());
+        assertFalse(clue.isDailyDouble());
+        assertEquals(1234, clue.gameId());
+        assertEquals("2024-10-29", clue.gameDate());
     }
 
     @Test
     void testIsDailyDouble() {
-        assertTrue(buildClue(true).getIsDailyDouble());
-        assertFalse(buildClue(false).getIsDailyDouble());
+        assertTrue(buildClue(true).isDailyDouble());
+        assertFalse(buildClue(false).isDailyDouble());
     }
 
     @Test
