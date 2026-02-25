@@ -12,9 +12,6 @@ import java.util.List;
 
 public class Scraper {
 
-    private int gameId = 0;
-    private String gameDate = "1970-0-0";
-    //private static final ScraperHelper scraperHelper = new ScraperHelper();
     private final ScraperHelper scraperHelper;
     private boolean logging = false;
 
@@ -23,17 +20,16 @@ public class Scraper {
     }
 
     List<Clue> scrapeGame(Document doc, int gameNumber) throws Exception {
-        gameId = gameNumber;
         String title = doc.title();
         if (logging) System.out.println("Title: " + title);
 
-        gameDate = title.split("aired")[1].trim();
-        System.out.println("Scraping Game: " + gameId + " for date: " + gameDate);
+        String gameDate = title.split("aired")[1].trim();
+        System.out.println("Scraping Game: " + gameNumber + " for date: " + gameDate);
 
         List<String> categories = getCategories(doc);
         if (logging) System.out.println("Categories: " + categories);
 
-        List<Clue> clues = getClues(doc, categories);
+        List<Clue> clues = getClues(doc, categories, gameNumber, gameDate);
         if (logging) System.out.println("Clue Count: " + clues.size());
         if (logging) System.out.println("----------------------------------------");
         return clues;
@@ -51,24 +47,20 @@ public class Scraper {
 
     private List<String> getCategories(Document doc) {
         List<String> categories = new ArrayList<>();
-        // Select all elements with class "category_name"
         Elements categoryElements = doc.select(".category_name");
-
-        // Iterate and print each element's content
         for (Element element : categoryElements) {
             categories.add(element.text());
         }
         return categories;
     }
 
-    private List<Clue> getClues(Document doc, List<String> categories) {
+    private List<Clue> getClues(Document doc, List<String> categories,
+                                int gameId, String gameDate) {
         List<Clue> clues = new ArrayList<>();
 
-        // Select all td elements with class "clue"
         Elements clueElements = doc.select("td.clue");
         if (logging) System.out.println("Clue Element Count: " + clueElements.size());
 
-        // Iterate through each clue element
         for (Element clue : clueElements) {
             Element textElement = clue.selectFirst("td.clue_text");
             if (textElement == null) {
@@ -100,10 +92,10 @@ public class Scraper {
 
             Clue clueObj;
             if (clueId.contains("FJ")) {
-                clueObj = constructFjClue(categories, clueText, correctResponse);
+                clueObj = constructFjClue(categories, clueText, correctResponse, gameId, gameDate);
             } else {
                 clueObj = constructClue(categories, clueValue, clueText,
-                        clueId, correctResponse, isDailyDouble);
+                        clueId, correctResponse, isDailyDouble, gameId, gameDate);
             }
             clues.add(clueObj);
             if (logging) printClues(clueObj, clueId);
@@ -113,7 +105,8 @@ public class Scraper {
 
     private Clue constructClue(
             List<String> categories, String clueValue, String clueText,
-            String clueId, String correctResponse, boolean isDailyDouble) {
+            String clueId, String correctResponse, boolean isDailyDouble,
+            int gameId, String gameDate) {
         String[] clueIdParts = clueId.split("_");
         String round = clueIdParts[1];
         int categoryNumber = -1;
@@ -128,7 +121,7 @@ public class Scraper {
     }
 
     private Clue constructFjClue(List<String> categories, String clueText,
-                                 String correctResponse) {
+                                 String correctResponse, int gameId, String gameDate) {
         return new Clue(categories.get(categories.size() - 1),
                 "FJ",
                 categories.size() - 1,
@@ -143,10 +136,7 @@ public class Scraper {
     protected List<String> scrapeSeason(String url) {
         List<String> gameIds = new ArrayList<>();
         try {
-            // Connect to the website and get the HTML document
             Document doc = Jsoup.connect(url).get();
-
-            // Select elements using CSS selectors
             Elements links = doc.select("a[href]");
             for (Element link : links) {
                 String childUrl = link.absUrl("href");

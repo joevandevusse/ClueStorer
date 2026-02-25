@@ -22,7 +22,7 @@ Items are grouped by file and ordered by priority within each group. Check them 
 - [x] **`ClueStorage.java` / `pom.xml` — Guice is wired but never used**
   `@Inject` is on `Scraper`'s constructor but objects are instantiated manually. Either wire up a real `Injector` (and un-comment `StorageModule`) or remove Guice entirely and simplify.
 
-- [ ] **`Scraper.java` — Mutable `gameId` / `gameDate` instance state**
+- [x] **`Scraper.java` — Mutable `gameId` / `gameDate` instance state**
   These fields are set during `scrapeGame()`, making `Scraper` stateful and non-reentrant. Pass them as parameters or return a wrapper object alongside the clue list.
 
 - [ ] **`ScraperHelper.java` — Switch statement is just multiplication**
