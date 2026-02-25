@@ -6,7 +6,7 @@ Items are grouped by file and ordered by priority within each group. Check them 
 
 ## High Priority
 
-- [ ] **`Scraper.java` — Fragile game ID parsing in `scrapeSeason`**
+- [x] **`Scraper.java` — Fragile game ID parsing in `scrapeSeason`**
   `childUrl.split("=")[1]` breaks if `game_id` is not the only query parameter (e.g., `?game_id=123&foo=bar` yields `123&foo`). Replace with proper URL parsing via `URI` or `URLDecoder`.
 
 - [x] **`ScrapeTest.java` — Test file does not compile and has no real tests**

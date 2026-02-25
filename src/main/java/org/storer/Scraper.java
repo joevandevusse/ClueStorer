@@ -6,8 +6,8 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import org.storer.meta.Clue;
 
+import java.net.URI;
 import java.util.ArrayList;
-//import java.util.Arrays;
 import java.util.List;
 
 public class Scraper {
@@ -151,7 +151,12 @@ public class Scraper {
             for (Element link : links) {
                 String childUrl = link.absUrl("href");
                 if (childUrl.contains("game_id")) {
-                    gameIds.add(childUrl.split("=")[1]);
+                    for (String param : new URI(childUrl).getQuery().split("&")) {
+                        if (param.startsWith("game_id=")) {
+                            gameIds.add(param.substring("game_id=".length()));
+                            break;
+                        }
+                    }
                 }
             }
         } catch (Exception e) {
