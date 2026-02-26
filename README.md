@@ -42,6 +42,8 @@ CREATE TABLE clues_java (
     game_date VARCHAR,
     date_added VARCHAR
 );
+
+CREATE INDEX idx_clues_game_date ON clues_java (game_date);
 ```
 
 Set the following environment variables before running either entry point:
