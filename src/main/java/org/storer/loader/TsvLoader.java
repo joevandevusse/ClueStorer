@@ -59,7 +59,7 @@ public class TsvLoader {
     try (HikariDataSource dataSource = new HikariDataSource(config)) {
       new TsvLoader(dataSource).load(filePath);
     } catch (RuntimeException e) {
-      System.err.println(e.getMessage());
+      log.error(e.getMessage(), e.getCause());
       System.exit(1);
     }
   }
