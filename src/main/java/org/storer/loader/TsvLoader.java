@@ -47,6 +47,9 @@ public class TsvLoader {
 
         try (HikariDataSource dataSource = new HikariDataSource(config)) {
             new TsvLoader(dataSource).load(args[0]);
+        } catch (RuntimeException e) {
+            System.err.println(e.getMessage());
+            System.exit(1);
         }
     }
 
@@ -61,8 +64,8 @@ public class TsvLoader {
                 "INSERT INTO " + TABLE +
                 " (id, category, round, category_number, clue_value, question, answer," +
                 " is_daily_double, game_id, game_date, date_added)" +
-                " VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)" +
-                " ON CONFLICT (id) DO NOTHING";
+                " SELECT ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?" +
+                " WHERE NOT EXISTS (SELECT 1 FROM " + TABLE + " WHERE id = ?)";
 
         String dateAdded = LocalDate.now().format(DATE_ADDED_FORMATTER);
 
@@ -108,6 +111,7 @@ public class TsvLoader {
                 ps.setInt(9, gameId);
                 ps.setString(10, airDate);
                 ps.setString(11, dateAdded);
+                ps.setString(12, id);   // id for the NOT EXISTS check
                 ps.addBatch();
 
                 count++;
@@ -121,8 +125,7 @@ public class TsvLoader {
             log.info("Load complete. Total rows processed: {}", count);
 
         } catch (Exception e) {
-            log.error("Failed to load TSV file: {}", filePath, e);
-            System.exit(1);
+            throw new RuntimeException("Failed to load TSV file: " + filePath, e);
         }
     }
 

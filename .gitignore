@@ -36,3 +36,6 @@ build/
 
 ### Mac OS ###
 .DS_Store
+
+### Data files ###
+jeopardy_dataset_seasons_1-41/
