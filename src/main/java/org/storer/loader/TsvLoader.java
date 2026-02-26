@@ -7,6 +7,7 @@ import org.apache.commons.csv.CSVParser;
 import org.apache.commons.csv.CSVRecord;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.storer.meta.Clue;
 
 import java.io.FileInputStream;
 import java.io.InputStreamReader;
@@ -26,13 +27,23 @@ public class TsvLoader {
     private static final DateTimeFormatter DATE_ADDED_FORMATTER = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 
     public static void main(String[] args) {
-        if (args.length == 0) {
-            System.err.println("Usage: TsvLoader <path-to-tsv-file>");
+        boolean dryRun = args.length > 0 && args[0].equals("--dry-run");
+        int fileArgIndex = dryRun ? 1 : 0;
+
+        if (fileArgIndex >= args.length) {
+            System.err.println("Usage: TsvLoader [--dry-run] <path-to-tsv-file>");
             System.exit(1);
         }
 
-        String url = System.getenv("DB_URL");
-        String user = System.getenv("DB_USER");
+        String filePath = args[fileArgIndex];
+
+        if (dryRun) {
+            new TsvLoader().load(filePath);
+            return;
+        }
+
+        String url      = System.getenv("DB_URL");
+        String user     = System.getenv("DB_USER");
         String password = System.getenv("DB_PASSWORD");
 
         if (url == null || user == null || password == null) {
@@ -46,7 +57,7 @@ public class TsvLoader {
         config.setPassword(password);
 
         try (HikariDataSource dataSource = new HikariDataSource(config)) {
-            new TsvLoader(dataSource).load(args[0]);
+            new TsvLoader(dataSource).load(filePath);
         } catch (RuntimeException e) {
             System.err.println(e.getMessage());
             System.exit(1);
@@ -54,79 +65,100 @@ public class TsvLoader {
     }
 
     private final HikariDataSource dataSource;
+    private final boolean dryRun;
+
+    /** Dry-run constructor — no database connection required. */
+    TsvLoader() {
+        this.dataSource = null;
+        this.dryRun = true;
+    }
 
     TsvLoader(HikariDataSource dataSource) {
         this.dataSource = dataSource;
+        this.dryRun = false;
     }
 
     void load(String filePath) {
-        String insertQuery =
-                "INSERT INTO " + TABLE +
-                " (id, category, round, category_number, clue_value, question, answer," +
-                " is_daily_double, game_id, game_date, date_added)" +
-                " SELECT ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?" +
-                " WHERE NOT EXISTS (SELECT 1 FROM " + TABLE + " WHERE id = ?)";
-
-        String dateAdded = LocalDate.now().format(DATE_ADDED_FORMATTER);
-
         CSVFormat format = CSVFormat.TDF.builder()
                 .setHeader()
                 .setSkipHeaderRecord(true)
                 .build();
 
         try (Reader reader = new InputStreamReader(new FileInputStream(filePath), StandardCharsets.UTF_8);
-             CSVParser parser = new CSVParser(reader, format);
-             Connection connection = dataSource.getConnection();
-             PreparedStatement ps = connection.prepareStatement(insertQuery)) {
+             CSVParser parser = new CSVParser(reader, format)) {
 
-            int count = 0;
-
-            for (CSVRecord record : parser) {
-                String airDate    = record.get("air_date").trim();
-                String category   = record.get("category").trim();
-                String question   = record.get("question").trim();
-                String answer     = record.get("answer").trim();
-                String rawRound   = record.get("round").trim();
-                String rawValue   = record.get("clue_value").trim();
-                String rawDdValue = record.get("daily_double_value").trim();
-
-                String  round          = mapRound(rawRound);
-                boolean isDailyDouble  = !rawDdValue.isEmpty() && Integer.parseInt(rawDdValue) > 0;
-                String  clueValue      = (rawValue.isEmpty() || rawValue.equals("0")) ? "$0" : "$" + rawValue;
-                int     gameId         = airDate.isEmpty() ? 0 : Integer.parseInt(airDate.replace("-", ""));
-
-                // Deterministic ID — makes the loader idempotent on re-runs
-                String deterministicKey = round + "|" + category + "|" + question + "|" + airDate;
-                String id = UUID.nameUUIDFromBytes(
-                        deterministicKey.getBytes(StandardCharsets.UTF_8)).toString();
-
-                ps.setString(1, id);
-                ps.setString(2, category);
-                ps.setString(3, round);
-                ps.setInt(4, -1);       // category_number not available in TSV
-                ps.setString(5, clueValue);
-                ps.setString(6, question);
-                ps.setString(7, answer);
-                ps.setBoolean(8, isDailyDouble);
-                ps.setInt(9, gameId);
-                ps.setString(10, airDate);
-                ps.setString(11, dateAdded);
-                ps.setString(12, id);   // id for the NOT EXISTS check
-                ps.addBatch();
-
-                count++;
-                if (count % BATCH_SIZE == 0) {
-                    ps.executeBatch();
-                    log.info("Inserted {} rows...", count);
-                }
+            if (dryRun) {
+                long count = parser.stream().count();
+                log.info("[DRY RUN] {} rows would be inserted.", count);
+                return;
             }
 
-            ps.executeBatch(); // flush remaining rows
-            log.info("Load complete. Total rows processed: {}", count);
+            String insertQuery =
+                    "INSERT INTO " + TABLE +
+                    " (id, category, round, category_number, clue_value, question, answer," +
+                    " is_daily_double, game_id, game_date, date_added)" +
+                    " SELECT ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?" +
+                    " WHERE NOT EXISTS (SELECT 1 FROM " + TABLE + " WHERE id = ?)";
+
+            String dateAdded = LocalDate.now().format(DATE_ADDED_FORMATTER);
+
+            try (Connection connection = dataSource.getConnection();
+                 PreparedStatement ps = connection.prepareStatement(insertQuery)) {
+
+                int count = 0;
+
+                for (CSVRecord record : parser) {
+                    Clue clue = parseRecord(record);
+
+                    String id = UUID.nameUUIDFromBytes(
+                            (clue.round() + "|" + clue.category() + "|" + clue.question() + "|" + clue.gameDate())
+                                    .getBytes(StandardCharsets.UTF_8)).toString();
+
+                    ps.setString(1, id);
+                    ps.setString(2, clue.category());
+                    ps.setString(3, clue.round());
+                    ps.setInt(4, clue.categoryNumber());
+                    ps.setString(5, clue.clueValue());
+                    ps.setString(6, clue.question());
+                    ps.setString(7, clue.answer());
+                    ps.setBoolean(8, clue.isDailyDouble());
+                    ps.setInt(9, clue.gameId());
+                    ps.setString(10, clue.gameDate());
+                    ps.setString(11, dateAdded);
+                    ps.setString(12, id);   // id for the NOT EXISTS check
+                    ps.addBatch();
+
+                    count++;
+                    if (count % BATCH_SIZE == 0) {
+                        ps.executeBatch();
+                        log.info("Inserted {} rows...", count);
+                    }
+                }
+
+                ps.executeBatch();
+                log.info("Load complete. Total rows processed: {}", count);
+            }
 
         } catch (Exception e) {
             throw new RuntimeException("Failed to load TSV file: " + filePath, e);
         }
+    }
+
+    private Clue parseRecord(CSVRecord record) {
+        String airDate    = record.get("air_date").trim();
+        String category   = record.get("category").trim();
+        String question   = record.get("question").trim();
+        String answer     = record.get("answer").trim();
+        String rawRound   = record.get("round").trim();
+        String rawValue   = record.get("clue_value").trim();
+        String rawDdValue = record.get("daily_double_value").trim();
+
+        String  round         = mapRound(rawRound);
+        boolean isDailyDouble = !rawDdValue.isEmpty() && Integer.parseInt(rawDdValue) > 0;
+        String  clueValue     = (rawValue.isEmpty() || rawValue.equals("0")) ? "$0" : "$" + rawValue;
+        int     gameId        = airDate.isEmpty() ? 0 : Integer.parseInt(airDate.replace("-", ""));
+
+        return new Clue(category, round, -1, clueValue, question, answer, isDailyDouble, gameId, airDate);
     }
 
     private String mapRound(String raw) {

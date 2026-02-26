@@ -30,7 +30,7 @@ public class Scraper {
             throw new IllegalArgumentException("Unexpected page title format: " + title);
         }
         String gameDate = titleParts[1].trim();
-        log.info("Scraping Game: {} for date: {}", gameNumber, gameDate);
+        log.debug("Scraping Game: {} for date: {}", gameNumber, gameDate);
 
         List<String> categories = getCategories(doc);
         log.debug("Categories: {}", categories);
