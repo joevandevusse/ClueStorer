@@ -30,7 +30,7 @@ SAMPLE_SIZE    = 500             # categories sampled to build the taxonomy
 TAXONOMY_SIZE  = 75              # number of canonical topics to generate
 BATCH_SIZE     = 30              # categories per LLM call in pass 2
 MODEL          = "claude-haiku-4-5-20251001"
-TAXONOMY_FILE  = "taxonomy.json" # saved after first run, reused on subsequent runs
+TAXONOMY_FILE  = os.path.join(os.path.dirname(__file__), "taxonomy.json")
 
 # ---------------------------------------------------------------------------
 # Helpers

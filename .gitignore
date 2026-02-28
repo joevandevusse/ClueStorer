@@ -36,6 +36,7 @@ build/
 
 ### Python ###
 .venv/
+*.log
 
 ### Data files ###
 jeopardy_dataset_seasons_1-41/

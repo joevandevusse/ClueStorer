@@ -26,10 +26,10 @@ ClueStorer is a Java-based application designed to scrape Jeopardy! game data fr
 
 ## Database Setup
 
-The application requires a PostgreSQL database running locally. All DDL is tracked in [`migrations.sql`](migrations.sql) — run that file against your database to set up the full schema:
+The application requires a PostgreSQL database running locally. All DDL is tracked in [`db/migrations.sql`](db/migrations.sql) — run that file against your database to set up the full schema:
 
 ```bash
-psql -U your_user -d your_db -f migrations.sql
+psql -U your_user -d your_db -f db/migrations.sql
 ```
 
 Set the following environment variables before running either entry point:
