@@ -11,6 +11,14 @@ Environment variables (same as the Java loaders):
     DB_URL      e.g. localhost/jeopardy
     DB_USER
     DB_PASSWORD
+
+Environment: venv
+source .venv/bin/activate
+
+  1. Pass 1 — Sample ~500 random category names from your DB, ask Claude to derive a taxonomy of ~75 canonical topics from them (e.g. "U.S.
+  Presidents", "World Geography", "Word Games")
+  2. Pass 2 — Batch all ~27k unique categories in groups of 30, classify each against that fixed taxonomy
+  3. Store mappings in a new category_mappings table (jeopardy_category → canonical_topic)
 """
 
 import os

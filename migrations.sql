@@ -1,6 +1,7 @@
 -- NOTE: After creating tables, grant access to your application user:
 --   GRANT ALL PRIVILEGES ON TABLE clues_java TO your_user;
 --   GRANT ALL PRIVILEGES ON TABLE cluster_assignments TO your_user;
+--   GRANT ALL PRIVILEGES ON TABLE category_mappings TO your_user;
 
 -- Migration 1: Core clues table
 CREATE TABLE clues_java (
@@ -20,9 +21,17 @@ CREATE TABLE clues_java (
 -- Migration 2: Index for date-based filtering
 CREATE INDEX idx_clues_game_date ON clues_java (game_date);
 
--- Migration 3: Cluster assignments from NLP pipeline
+-- Migration 3: Cluster assignments from TF-IDF/K-Means pipeline (exploratory)
 CREATE TABLE cluster_assignments (
     clue_id VARCHAR PRIMARY KEY REFERENCES clues_java(id),
     cluster_id INT NOT NULL,
     cluster_label VARCHAR NOT NULL
 );
+
+-- Migration 4: Canonical topic mappings from LLM normalization pipeline
+CREATE TABLE category_mappings (
+    jeopardy_category VARCHAR PRIMARY KEY,
+    canonical_topic VARCHAR NOT NULL
+);
+
+CREATE INDEX idx_category_mappings_topic ON category_mappings (canonical_topic);
