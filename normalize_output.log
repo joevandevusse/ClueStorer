@@ -1,0 +1,440 @@
+(.venv) apple@Apples-Mac-mini ClueStorer % python normalize_categories.py
+
+Connected.
+Sampled 500 categories. Generating taxonomy...
+
+Taxonomy (71 topics):
+  - U.S. Geography
+  - World Geography
+  - U.S. History
+  - World History
+  - European History
+  - Ancient History
+  - Medieval History
+  - Shakespeare
+  - American Literature
+  - British Literature
+  - World Literature
+  - Poetry
+  - Movies & Film
+  - Television
+  - Music History
+  - Classical Music
+  - Rock & Pop Music
+  - Broadway & Theater
+  - Art & Artists
+  - Architecture
+  - Photography
+  - Mythology & Folklore
+  - Religion & Biblical Studies
+  - Philosophy
+  - Science & Nature
+  - Physics & Energy
+  - Chemistry
+  - Biology & Anatomy
+  - Medicine & Health
+  - Astronomy & Space
+  - Geology & Earth Science
+  - Ecology & Environment
+  - Mathematics
+  - Technology & Computers
+  - Business & Economics
+  - Law & Government
+  - Military History & Warfare
+  - Sports
+  - Olympic Games
+  - Animals & Wildlife
+  - Botany & Plants
+  - Food & Cuisine
+  - Beverages & Wine
+  - Fashion & Clothing
+  - Architecture & Design
+  - Awards & Honors
+  - Inventions & Inventors
+  - Transportation
+  - Exploration & Discovery
+  - Cultural Studies
+  - Social Studies
+  - Academics & Education
+  - Time & Calendars
+  - Numbers & Statistics
+  - Famous People
+  - Royalty & Nobility
+  - Explorers & Adventurers
+  - Quotes & Aphorisms
+  - Definitions & Vocabulary
+  - Acronyms & Abbreviations
+  - Holidays & Celebrations
+  - Landmarks & Monuments
+  - Islands
+  - Capitals & Cities
+  - Tribes & Indigenous Peoples
+  - Comics & Cartoons
+  - Popular Culture
+  - Games & Gambling
+  - Toys & Games
+  - Wordplay & Puzzles
+  - Other
+
+Classifying 56,328 unique categories in batches of 30...
+Batch 1020 failed: Expecting ':' delimiter: line 18 column 12 (char 685)
+Batch 1050 failed: Invalid \escape: line 29 column 4 (char 1241)
+Batch 1920 failed: Invalid \escape: line 11 column 4 (char 364)
+Batch 4200 failed: Invalid \escape: line 7 column 4 (char 192)
+Batch 6510 failed: Expecting ':' delimiter: line 10 column 11 (char 366)
+Batch 7050 failed: Invalid \escape: line 23 column 4 (char 886)
+Batch 7650 failed: Extra data: line 33 column 1 (char 1320)
+Batch 7950 failed: Expecting ':' delimiter: line 19 column 9 (char 740)
+Batch 8160 failed: Invalid \escape: line 14 column 4 (char 501)
+Batch 9570 failed: Expecting ':' delimiter: line 26 column 9 (char 1013)
+Batch 9960 failed: Expecting ':' delimiter: line 25 column 9 (char 1048)
+Batch 10020 failed: Expecting ':' delimiter: line 12 column 12 (char 414)
+Batch 10140 failed: Invalid \escape: line 16 column 4 (char 627)
+Batch 10200 failed: Expecting ':' delimiter: line 7 column 5 (char 230)
+Batch 10500 failed: Expecting ':' delimiter: line 31 column 9 (char 1272)
+Batch 10920 failed: Expecting ':' delimiter: line 21 column 12 (char 863)
+Batch 12510 failed: Expecting ':' delimiter: line 12 column 14 (char 449)
+Batch 12810 failed: Expecting ':' delimiter: line 13 column 9 (char 445)
+Batch 13560 failed: Expecting ':' delimiter: line 10 column 10 (char 364)
+Batch 14850 failed: Expecting ':' delimiter: line 13 column 11 (char 487)
+Batch 15150 failed: Expecting ':' delimiter: line 9 column 12 (char 319)
+Batch 15720 failed: Invalid \escape: line 12 column 4 (char 431)
+Batch 16230 failed: Invalid \escape: line 16 column 4 (char 653)
+Batch 16740 failed: Expecting ':' delimiter: line 18 column 10 (char 562)
+Batch 16980 failed: Expecting ':' delimiter: line 23 column 11 (char 893)
+Batch 17220 failed: Invalid \escape: line 23 column 4 (char 855)
+Batch 17280 failed: Invalid \escape: line 30 column 4 (char 1155)
+Batch 17460 failed: Invalid \escape: line 7 column 4 (char 217)
+Batch 18780 failed: Expecting ':' delimiter: line 7 column 10 (char 230)
+Batch 18840 failed: Expecting ':' delimiter: line 26 column 10 (char 1085)
+Batch 19350 failed: Expecting ':' delimiter: line 13 column 9 (char 490)
+Batch 19530 failed: Invalid \escape: line 11 column 4 (char 381)
+Batch 19590 failed: Expecting ':' delimiter: line 14 column 9 (char 551)
+Batch 19800 failed: Invalid \escape: line 24 column 4 (char 958)
+Batch 23430 failed: Invalid \escape: line 26 column 4 (char 1010)
+Batch 23580 failed: Expecting ':' delimiter: line 14 column 8 (char 596)
+Batch 24390 failed: Invalid \escape: line 9 column 4 (char 287)
+Batch 24540 failed: Invalid \escape: line 13 column 4 (char 469)
+Batch 24810 failed: Invalid \escape: line 29 column 22 (char 1211)
+Batch 24840 failed: Expecting ':' delimiter: line 21 column 12 (char 850)
+Batch 25740 failed: Expecting ':' delimiter: line 12 column 11 (char 452)
+Batch 26070 failed: Invalid \escape: line 28 column 11 (char 1019)
+Batch 28620 failed: Invalid \escape: line 12 column 4 (char 418)
+Batch 28710 failed: Expecting ':' delimiter: line 25 column 9 (char 954)
+Batch 30090 failed: Invalid \escape: line 29 column 4 (char 1121)
+Batch 31050 failed: Expecting ':' delimiter: line 12 column 10 (char 459)
+Batch 31200 failed: Invalid \escape: line 12 column 4 (char 414)
+Batch 32160 failed: Invalid \escape: line 5 column 4 (char 144)
+Batch 32790 failed: Expecting ':' delimiter: line 10 column 9 (char 391)
+Batch 32880 failed: Expecting ':' delimiter: line 12 column 13 (char 457)
+Batch 33900 failed: Invalid \escape: line 12 column 4 (char 412)
+Batch 33990 failed: Expecting ':' delimiter: line 15 column 11 (char 595)
+Batch 34530 failed: Invalid \escape: line 9 column 4 (char 299)
+Batch 34710 failed: Expecting ':' delimiter: line 30 column 11 (char 1218)
+Batch 34950 failed: Expecting ':' delimiter: line 26 column 9 (char 1030)
+Batch 35130 failed: Invalid \escape: line 13 column 4 (char 451)
+Batch 36600 failed: Expecting ':' delimiter: line 17 column 11 (char 703)
+Batch 37020 failed: Extra data: line 33 column 1 (char 1312)
+Batch 38760 failed: Invalid \escape: line 4 column 4 (char 77)
+Batch 39930 failed: Expecting ':' delimiter: line 31 column 10 (char 1249)
+Batch 40560 failed: Expecting ':' delimiter: line 21 column 9 (char 829)
+Batch 41160 failed: Invalid \escape: line 4 column 4 (char 74)
+Batch 42150 failed: Extra data: line 33 column 1 (char 1238)
+Batch 42450 failed: Invalid \escape: line 11 column 19 (char 378)
+Batch 42600 failed: Invalid \escape: line 30 column 4 (char 1161)
+Batch 42630 failed: Invalid \escape: line 7 column 4 (char 174)
+Batch 43890 failed: Invalid \escape: line 11 column 4 (char 399)
+Batch 44100 failed: Expecting ':' delimiter: line 5 column 5 (char 177)
+Batch 44880 failed: Invalid \escape: line 25 column 4 (char 964)
+Batch 45270 failed: Invalid \escape: line 4 column 4 (char 83)
+Batch 45330 failed: Invalid \escape: line 10 column 4 (char 368)
+Batch 47250 failed: Expecting ':' delimiter: line 9 column 10 (char 297)
+Batch 48210 failed: Expecting ':' delimiter: line 12 column 9 (char 372)
+Batch 48540 failed: Expecting ':' delimiter: line 23 column 9 (char 845)
+Batch 48750 failed: Expecting ':' delimiter: line 16 column 5 (char 656)
+Batch 49230 failed: Invalid \escape: line 16 column 4 (char 545)
+Batch 50280 failed: Expecting ':' delimiter: line 30 column 10 (char 1218)
+Batch 50580 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmCZQXqdj928yqbpp82'}
+Batch 50610 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmCa1FFSikZdLquEaXz'}
+Batch 50640 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmCaehKADYwVZzDC3TE'}
+Batch 50670 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmCbJPWez8ifQMtvA1b'}
+Batch 50700 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmCbwadi8G8BTihXTa9'}
+Batch 50730 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmCcX4FRQx8h6gFoDqy'}
+Batch 50760 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmCdc3VYF88gpvp7gCw'}
+Batch 50790 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmCeE1CvL9ivjQAmzxT'}
+Batch 50820 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmCfHzZGtRfoER9kUzA'}
+Batch 50850 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmCgUgTXB9Yxtr59WHE'}
+Batch 50880 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmChQF399f3c6E7hYws'}
+Batch 50910 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmCiA8qLTYFRMg7Lvi3'}
+Batch 50940 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmCioaUY1WUYoBtQ5a7'}
+Batch 50970 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmCjaU8M65kN4U5MeP6'}
+Batch 51000 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmCkBRs1faeqGX3ab3g'}
+Batch 51030 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmCkrcLCuXMcp2gd5pS'}
+Batch 51060 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmCmV4jd6A4SW2AML1c'}
+Batch 51090 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmCnTrKYroAzyUTS6tF'}
+Batch 51120 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmCoRtfaw9fm4MN5mEe'}
+Batch 51150 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmCp7p7XUEE1oBU7L7B'}
+Batch 51180 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmCpqUVCCkCDXrtDdZp'}
+Batch 51210 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmCqa8C2SacnKdGa3uC'}
+Batch 51240 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmCrCaNvtjyAchR6yTF'}
+Batch 51270 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmCrwEQ3D1j8c2qXYar'}
+Batch 51300 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmCsZgjpxVvgyzC8aMU'}
+Batch 51330 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmCtLpMRYYMShECV8H4'}
+Batch 51360 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmCtwHLSPc2hpLhU9Ys'}
+Batch 51390 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmCuaEVPhJsEm5cEf54'}
+Batch 51420 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmCvCvr5uJmS7qDmAcX'}
+Batch 51450 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmCvqdgKrGns6tmZZqX'}
+Batch 51480 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmCwYnzHqd9JGVzwsBM'}
+Batch 51510 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmCxCEujReKv7oxY56a'}
+Batch 51540 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmCy4pkGXH2SApA5TVP'}
+Batch 51570 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmCyiGQPyHvCuURcPrw'}
+Batch 51600 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmCzLyDBh4Cx5diyxJW'}
+Batch 51630 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmCzzfYBs9Fhn8T2QNy'}
+Batch 51660 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmD1tVH4bLui9jUvRW3'}
+Batch 51690 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmD2kps5x8xfnDKd6Uj'}
+Batch 51720 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmD3P2s4t33raRELwte'}
+Batch 51750 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmD3yzxE1saAWQiwZFz'}
+Batch 51780 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmD4bD1T3WteJR14JaZ'}
+Batch 51810 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmD5Ftsa57xTXhe8SfK'}
+Batch 51840 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmD5s7HKJE3ig6DbCKX'}
+Batch 51870 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmD6r93Gz3wrujcQkzL'}
+Batch 51900 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmD7TMLLanWqdCsgkoq'}
+Batch 51930 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmD86YqNnD5EB5SrXFA'}
+Batch 51960 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmD8kF7wzfPnBPAvuud'}
+Batch 51990 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmD9RAuadsKNgY8FHN9'}
+Batch 52020 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmDA28keYHg4va7dmEn'}
+Batch 52050 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmDAfLMagm75t9LpuRe'}
+Batch 52080 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmDBZQk4FFbC8yjTZvf'}
+Batch 52110 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmDCBrps92FJkisYMPd'}
+Batch 52140 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmDCpZeqVadxsttB2XA'}
+Batch 52170 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmDDSmPBBY23JhjWYN4'}
+Batch 52200 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmDE7whNRrSJg9AV9Ra'}
+Batch 52230 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmDEqMh3xVJf1jkWzaC'}
+Batch 52260 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmDFV42t7WpCQhSn5Mi'}
+Batch 52290 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmDG8VbdLsSJfeUCyBi'}
+Batch 52320 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmDGkwzoWrGuMcbwDx5'}
+Batch 52350 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmDHNQc3E2y9cw6Ce26'}
+Batch 52380 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmDJ26dCWjzQv7DSdh7'}
+Batch 52410 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmDJgYBM45xrvXNaEKD'}
+Batch 52440 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmDKnktwneHqXBRg5dC'}
+Batch 52470 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmDLccoSdQyCnA35bJK'}
+Batch 52500 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmDM69Fevbo8tuLcs7d'}
+Batch 52530 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmDN6vACygRNJwPUEZ2'}
+Batch 52560 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmDNrJqjjtWNWH2b4sd'}
+Batch 52590 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmDPbTRfgM2RyHG3stm'}
+ 93%|██████████████████████████████████████████████████████████████▌    | 1754/1878 [1:19:52<00:21,  5.88it/s]Batch 52620 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmDQDuYQeiCFmEVozoX'}
+Batch 52650 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmDQrcWxbpV8FQ3gAm3'}
+Batch 52680 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmDRUozrHLRFD37fzor'}
+Batch 52710 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmDS5nNZv6Lk3nSxFCT'}
+Batch 52740 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmDSijFm8ZyzaRLirRm'}
+Batch 52770 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmDTJhRk2tkQ1ofWCt2'}
+Batch 52800 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmDTvue57GRFWEaoDNN'}
+Batch 52830 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmDUa6mxHSNRRPrrLW3'}
+Batch 52860 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmDVBKGF1PxtoT9dY5c'}
+Batch 52890 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmDVpkwadUvz2exdWbs'}
+Batch 52920 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmDWSxe8oqL8DBjA6jn'}
+Batch 52950 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmDX6QKbu7LXiFfbiFt'}
+Batch 52980 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmDXjMbrkJUE8dLLXti'}
+Batch 53010 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmDYLKKbZRmRPbngK6b'}
+Batch 53040 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmDZ2juZ2eJZDHW9Dzg'}
+Batch 53070 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmDZhBGzjPxngB4ZjaR'}
+Batch 53100 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmDaP6cGay1EGcwen8A'}
+Batch 53130 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmDaya1MUeoxZhfNF9s'}
+Batch 53160 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmDbaXyAh7pmNg11H63'}
+Batch 53190 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmDcEy8KzHBSBU2PEcS'}
+Batch 53220 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmDcrRsNUuzroXVEZ7d'}
+Batch 53250 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmDdUPTqmiGm7XWqsQh'}
+Batch 53280 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmDe8KmHwKrmjTDAsJd'}
+Batch 53310 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmDej3XTXXsqnazzi1d'}
+Batch 53340 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmDfMjjkaZGBAtMyCDt'}
+Batch 53370 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmDfzCMjRKvFB6SCeki'}
+Batch 53400 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmDgctxoDMKsu88uxBT'}
+Batch 53430 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmDhWitWujGTb9Hkovb'}
+Batch 53460 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmDi7SRKJdhGxo92Q79'}
+Batch 53490 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmDio7Skmu4QwCEjQEz'}
+Batch 53520 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmDjsMc1ow2n7Z3o35B'}
+Batch 53550 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmDkW4HYd7nMnU151jr'}
+Batch 53580 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmDm7Wu5YFr9ogiBWq7'}
+Batch 53610 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmDnFUaM7Qw8BwxjV4E'}
+Batch 53640 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmDntRfcxGarx6emyfY'}
+Batch 53670 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmDoZMYbfZBfin4BVnC'}
+Batch 53700 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmDpDo3iaitjw5sfWa7'}
+Batch 53730 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmDqp3MNqz7xengYABC'}
+Batch 53760 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmDrTUsJqcvKstX51yR'}
+Batch 53790 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmDs5w74qNtaFGsUeS1'}
+Batch 53820 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmDsjdSyP5N6k4FY9VM'}
+Batch 53850 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmDtQKFE1eeRiUTrkwD'}
+Batch 53880 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmDu1mycrLRFTXtdeoe'}
+Batch 53910 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmDughovaX8XPmYaSup'}
+Batch 53940 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmDvY4Bb6LD4tavzxKz'}
+Batch 53970 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmDw91idgKPXZU6J9wG'}
+Batch 54000 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmDwmijUVYSZKy9t1dH'}
+Batch 54030 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmDxdZUz3YK29t7skCU'}
+Batch 54060 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmDyEGtRsxb5hdpPGAh'}
+Batch 54090 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmDypk2EoWm7ekUGYZa'}
+Batch 54120 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmDzSx3yZVeAYoCgdBg'}
+Batch 54150 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmE14uW1QaLe8QWqDaa'}
+Batch 54180 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmE2xmAtZcSWEesCo71'}
+Batch 54210 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmE44VVEFAGVUeiyJZv'}
+Batch 54240 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmE4jArLxTCCZv3e98V'}
+Batch 54270 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmE5Lst3tbrPVZW6z7n'}
+Batch 54300 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmE5y5rimZ3iu2AyHGC'}
+Batch 54330 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmE6ZYviHss8cjkvEH3'}
+Batch 54360 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmE7AWxhdQCQi8Q78cM'}
+Batch 54390 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmE7qT6hUyPMnVcWkXP'}
+Batch 54420 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmE8VdzYc5Zs1MwLFre'}
+Batch 54450 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmE98bBQVn8UMLUBPBM'}
+Batch 54480 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmE9rVdhFqZbTTgCr9F'}
+Batch 54510 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmEAcPCsHfDfhYNx6wE'}
+Batch 54540 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmEBL3QaRVNUxgHN7v9'}
+Batch 54570 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmECTGGGEMdAow1ymL3'}
+Batch 54600 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmECuoL8MPL15U3B2VW'}
+Batch 54630 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmEDVmfQp8EcawrmC4a'}
+Batch 54660 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmEE6jNzapPmfQ3udtA'}
+Batch 54690 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmEEjgRFSYDWw1rsnwK'}
+Batch 54720 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmEFNPELDJPzbeswPnP'}
+Batch 54750 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmEGox5DAMi1cVjJ3z9'}
+Batch 54780 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmEHnjUSG5ebnETtMqv'}
+Batch 54810 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmEJUueBYX3AKPxwmLP'}
+Batch 54840 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmEKALMfu55DgwfUhz2'}
+Batch 54870 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmEKr1rTDCuR9xdxffs'}
+Batch 54900 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmELafRVecV6s5JEdCw'}
+Batch 54930 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmEMCNJgY74J6yLHb4o'}
+Batch 54960 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmEMoae1ZXxqFSkspGj'}
+Batch 54990 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmENWzeQHPhftwRVFLt'}
+Batch 55020 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmEPLMcmoDxg1YWQjad'}
+Batch 55050 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmEQ1YRMa9B4LyNUbCD'}
+Batch 55080 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmEQaXJP5fEdTGzq2Nf'}
+Batch 55110 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmER3JdqfxL5UktmTMz'}
+Batch 55140 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmERnwYtWcVLana2D9i'}
+Batch 55170 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmESV7uUeAds9tGUhTe'}
+Batch 55200 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmET5qMKzyeDhgSGMY5'}
+Batch 55230 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmETkX4Do7WWhcZPddC'}
+Batch 55260 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmEURCXQh9ngYctD7HY'}
+Batch 55290 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmEV4PosVUNbG1oXNjr'}
+Batch 55320 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmEVgMPhweFUAmbo6Rt'}
+Batch 55350 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmEWHKEXsEK6Uwjgwcx'}
+Batch 55380 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmEWv21ZcRtAMg62WAn'}
+Batch 55410 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmEXyX1Vjfn1tp4gZgC'}
+Batch 55440 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmEZkvF6ucHK9FtHoXj'}
+Batch 55470 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmEaRMttWvcZuY61mVZ'}
+Batch 55500 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmEb4ohg6NAVt8poQwT'}
+Batch 55530 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmEbkiv5CCkoT39fcr4'}
+Batch 55560 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmEcSQ71Ta67HaUCuQr'}
+Batch 55590 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmEdknBYKPmeox3paGz'}
+Batch 55620 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmEePizzVMV2cJGhwSa'}
+Batch 55650 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmEf3AhQrKZyqnXmdLb'}
+Batch 55680 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmEgKZYWxcooppXoFRQ'}
+Batch 55710 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmEgxWp3w7GQFeAA53V'}
+Batch 55740 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmEhZUcmtnBN4fY9Zzc'}
+Batch 55770 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmEiJNaEUakFhZssS12'}
+Batch 55800 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmEiw5VvTNrXESpb3v4'}
+Batch 55830 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmEjbGHcsbeAmKjQw27'}
+Batch 55860 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmEkDxjptZvWypnMZrH'}
+Batch 55890 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmEksfBgvCvExoqPxua'}
+Batch 55920 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmEmbZuLfwtq86DxvAn'}
+Batch 55950 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmEnEWngmesY251pye1'}
+Batch 55980 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmEnsxTzycsuXwdtjvq'}
+Batch 56010 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmEoTBkPKpTruaghqnK'}
+Batch 56040 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmEpAbfpKqpExDZYjLa'}
+Batch 56070 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmEpoYSeLtrjAB6Dhw7'}
+Batch 56100 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmEqQG4e1ZmaugU5cw1'}
+Batch 56130 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmEqzyjau61msxPPTFX'}
+Batch 56160 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmErcgvRvkoBYKWnamp'}
+Batch 56190 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmEsHs6SVuvNHH8XLBA'}
+Batch 56220 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmEst63UobPwozjMwtd'}
+Batch 56250 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmEtZGhdiRbzFhrX2UH'}
+Batch 56280 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmEuFSTw3QnwpuLaN7R'}
+Batch 56310 failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYZmEuvd74vGzoX2fEGLN'}
+100%|███████████████████████████████████████████████████████████████████| 1878/1878 [1:20:12<00:00,  2.56s/it]
+
+Done. 56,328 categories processed. 269 batches failed.
+(.venv) apple@Apples-Mac-mini ClueStorer %
+
+(.venv) apple@Apples-Mac-mini ClueStorer % python normalize_categories.py
+Connected.
+Sampled 500 categories. Generating taxonomy...
+
+Taxonomy (75 topics):
+  - U.S. History
+  - World History
+  - U.S. Geography & Cities
+  - World Geography & Capitals
+  - U.S. Politics & Government
+  - World Politics & Government
+  - Biology & Life Sciences
+  - Chemistry
+  - Physics
+  - Astronomy & Space
+  - Geology & Earth Science
+  - Medicine & Health
+  - Mathematics
+  - Classical Literature
+  - Modern Literature
+  - Shakespeare
+  - Poetry
+  - Film & Movies
+  - Television
+  - Music & Composers
+  - Popular Music & Artists
+  - Opera & Classical Music
+  - Theater & Broadway
+  - Visual Arts & Artists
+  - Architecture & Design
+  - Photography
+  - Dance
+  - Sports & Athletes
+  - Olympics
+  - Ancient Greece & Rome
+  - Ancient Egypt
+  - Medieval History
+  - The Renaissance
+  - American Presidents
+  - British Royalty
+  - World Monarchies
+  - Mythology
+  - Religion & Philosophy
+  - Law & Legal System
+  - Economics & Business
+  - Technology & Inventions
+  - Transportation
+  - Food & Cooking
+  - Beverages
+  - Fashion & Clothing
+  - Animals & Nature
+  - Plants & Botany
+  - Weather & Meteorology
+  - Anatomy & Body
+  - Languages & Words
+  - Foreign Languages & Phrases
+  - Grammar & Linguistics
+  - Holidays & Celebrations
+  - Comics & Graphic Novels
+  - Children's Literature
+  - Fairy Tales & Folklore
+  - Mysteries & Crime
+  - Science Fiction & Fantasy
+  - Gaming & Puzzles
+  - Board Games & Card Games
+  - Awards & Honors
+  - Journalism & Media
+  - Education & Colleges
+  - Military History & Conflicts
+  - Exploration & Travel
+  - Inventions & Patents
+  - Historical Figures
+  - Women in History
+  - LGBTQ+ History & Culture
+  - African American History & Culture
+  - European History & Culture
+  - Asian History & Culture
+  - Latin American History & Culture
+  - Wordplay & Puzzles
+  - Other
+
+56,328 unique categories total, 48,255 already mapped, 12,365 remaining.
+Batch 630 failed: Extra data: line 33 column 1 (char 730)
+100%|███████████████████████████████████████████████████████████████████████| 413/413 [11:51<00:00,  1.72s/it]
+
+Done. 12,365 categories processed. 1 batches failed.
+(.venv) apple@Apples-Mac-mini ClueStorer %
