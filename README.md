@@ -26,24 +26,10 @@ ClueStorer is a Java-based application designed to scrape Jeopardy! game data fr
 
 ## Database Setup
 
-The application requires a PostgreSQL database running locally. Ensure you have a table named `clues_java` with the following schema:
+The application requires a PostgreSQL database running locally. All DDL is tracked in [`migrations.sql`](migrations.sql) — run that file against your database to set up the full schema:
 
-```sql
-CREATE TABLE clues_java (
-    id VARCHAR PRIMARY KEY,
-    category VARCHAR,
-    round VARCHAR,
-    category_number INT,
-    clue_value VARCHAR,
-    question TEXT,
-    answer TEXT,
-    is_daily_double BOOLEAN,
-    game_id INT,
-    game_date VARCHAR,
-    date_added VARCHAR
-);
-
-CREATE INDEX idx_clues_game_date ON clues_java (game_date);
+```bash
+psql -U your_user -d your_db -f migrations.sql
 ```
 
 Set the following environment variables before running either entry point:
