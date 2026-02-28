@@ -2,6 +2,7 @@
 --   GRANT ALL PRIVILEGES ON TABLE clues_java TO your_user;
 --   GRANT ALL PRIVILEGES ON TABLE cluster_assignments TO your_user;
 --   GRANT ALL PRIVILEGES ON TABLE category_mappings TO your_user;
+--   GRANT ALL PRIVILEGES ON TABLE user_stats TO your_user;
 
 -- Migration 1: Core clues table
 CREATE TABLE clues_java (
@@ -35,3 +36,13 @@ CREATE TABLE category_mappings (
 );
 
 CREATE INDEX idx_category_mappings_topic ON category_mappings (canonical_topic);
+
+-- Migration 5: User study session results (drives Phase 4 bubble chart Y-axis)
+CREATE TABLE user_stats (
+    id SERIAL PRIMARY KEY,
+    canonical_topic VARCHAR NOT NULL,
+    passed BOOLEAN NOT NULL,
+    recorded_at TIMESTAMP NOT NULL DEFAULT now()
+);
+
+CREATE INDEX idx_user_stats_topic ON user_stats (canonical_topic);
