@@ -34,5 +34,8 @@ build/
 ### Mac OS ###
 .DS_Store
 
+### Python ###
+.venv/
+
 ### Data files ###
 jeopardy_dataset_seasons_1-41/
