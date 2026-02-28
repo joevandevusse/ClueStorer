@@ -3,6 +3,8 @@
 --   GRANT ALL PRIVILEGES ON TABLE cluster_assignments TO your_user;
 --   GRANT ALL PRIVILEGES ON TABLE category_mappings TO your_user;
 --   GRANT ALL PRIVILEGES ON TABLE user_stats TO your_user;
+--   GRANT USAGE, SELECT ON SEQUENCE user_stats_id_seq TO your_user;
+-- (The sequence grant is required for an INSERT into user_stats because id is SERIAL.)
 
 -- Migration 1: Core clues table
 CREATE TABLE clues_java (
